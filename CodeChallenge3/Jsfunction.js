@@ -9,6 +9,6 @@ function findvalue(object, key) {
 
 //var object = {"a":{"b":{"c":"d"}}};
 //var key = 'a/b/c' ;
-var object = { x: { y: { z: "a" } } };
+var object = {"x":{"y":{"z":"a"}}};
 var key = "x/y/z";
 console.log("The value of " + key + " is " + findvalue(object, key));
