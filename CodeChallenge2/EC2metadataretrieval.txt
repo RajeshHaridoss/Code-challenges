@@ -1,8 +1,9 @@
 1. The following describe-instances example uses filters to scope the results to specific instanceId  and the --query parameter to display only the instance IDs and availability zone.
 
 aws ec2 describe-instances \
-    --filters Name=InstanceId,Values=i-1234567890abcdef0 \
-    --query Reservations[*].Instances[*].{Instance:InstanceId,AZ:Placement.AvailabilityZone} \
+    --filters Name=instance-type,Values=t2.micro,t3.micro \
+    --instance-ids i-0098335d1905a32c2 \
+    --query 'Reservations[*].Instances[*].{Instance:InstanceId,AZ:Placement.AvailabilityZone}' \
     --output json
 
 2. terraform state pull | jq '.resources[] | select(.name == "state-locking-db")| .instances[].atttributes.hash_key'
