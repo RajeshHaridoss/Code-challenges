@@ -6,6 +6,8 @@ aws ec2 describe-instances \
     --query 'Reservations[*].Instances[*].{Instance:InstanceId,AZ:Placement.AvailabilityZone}' \
     --output json
 
-2. terraform state pull | jq '.resources[] | select(.name == "state-locking-db")| .instances[].atttributes.hash_key'
+2. The following code pulls the terraform state file in JSON format and use Jquery to scope the results to specific instance name and provide the required detail which is ami here. 
+
+terraform state pull | jq '.resources[] | select(.name == "ec2-instance-name")| .instances[].atttributes.ami'
 
 
