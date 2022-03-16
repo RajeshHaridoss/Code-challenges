@@ -1,4 +1,4 @@
-1. The following describe-instances example uses filters to scope the results to specific instanceId  and the --query parameter to display only the instance IDs and availability zone.
+1. The following describe-instances example uses filters to scope the results to specific instanceId  and the --query parameter to display only the instance IDs and availability zone. we can also filter the resources based on other parameters like instance type etc. 
 
 aws ec2 describe-instances \
     --filters Name=instance-type,Values=t2.micro,t3.micro \
