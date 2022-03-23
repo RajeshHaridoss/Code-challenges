@@ -1,0 +1,20 @@
+Terraform Code creates VPC,EC2 instances in public and private subnets,RDS postrgress instance in private subnets. This is not a complete infrastructure.
+
+Terraform workspace will be created to create new environment for Dev/Test/prod with dynamic variables for reproducibility. Any number of environments can be created and destroyed within minutes using this approach. Also all the resources like VPC, subnets, EC2 instances,etc were created using modules which can be reused across organization. 
+
+Run below commands to provision the infrastructure for Dev Environment. 
+   
+terraform init
+terraform workspace new dev
+terraform workspace select dev
+terraform plan -var-file=vars/dev.tfvars
+terraform apply -var-file=vars/dev.tfvars -auto-approve
+
+Run below commands to provision the infrastructure for prod Environment.  
+
+terraform init
+terraform workspace new prod
+terraform workspace select prod
+terraform plan -var-file=vars/prod.tfvars
+terraform apply -var-file=vars/prod.tfvars -auto-approve
+
