@@ -38,7 +38,7 @@ $ terraform destroy  -var-file=vars/dev.tfvars -auto-approve
 There are 2 ways to query the metadata of an instance which we normally use in our work. Code is present in the CodeChallenge2 directory.
 
 1. aws "describe-instances" uses filters to scope the results to specific instance types and instance ids and the --query parameter to display only the required parameters. 
-2. terraform state command to pull the terraform state file in JSON format and use Jquery to scope the results to specific component(ec2 instance) by name(or any other parameters) and also to display only the required parameters.
+2. terraform state command to pull the terraform state file in JSON format and use jq to scope the results to specific component(ec2 instance) by name(or any other parameters) and also to display only the required parameters.
 
 # CodeChallenge3 - We have a nested object, we would like a function that you pass in the object and a key and get back the value. How this is implemented is up to you.
 
